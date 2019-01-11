@@ -18,6 +18,10 @@ public class Quiz implements Serializable {
     @Column(name = "fechaCreacionCuestionario")
     private String fechaCreacionCuestionario;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    /*   @JoinColumn(name = "idDocente", nullable = false)
+     */
+    private Docente docente;
 
     public Quiz() {
 
@@ -27,6 +31,13 @@ public class Quiz implements Serializable {
         this.nombreCuestionario = nombreCuestionario;
         this.numPreguntasCuestionario = numPreguntasCuestionario;
         this.fechaCreacionCuestionario = fechaCreacionCuestionario;
+    }
+
+    public Quiz(String nombreCuestionario, int numPreguntasCuestionario, String fechaCreacionCuestionario, Docente docente) {
+        this.nombreCuestionario = nombreCuestionario;
+        this.numPreguntasCuestionario = numPreguntasCuestionario;
+        this.fechaCreacionCuestionario = fechaCreacionCuestionario;
+        this.docente = docente;
     }
 
     public Long getIdCuestionario() {
@@ -60,4 +71,13 @@ public class Quiz implements Serializable {
     public void setFechaCreacionCuestionario(String fechaCreacionCuestionario) {
         this.fechaCreacionCuestionario = fechaCreacionCuestionario;
     }
+
+    public Docente getDocente() {
+        return docente;
+    }
+
+    public void setDocente(Docente docente) {
+        this.docente = docente;
+    }
+
 }
