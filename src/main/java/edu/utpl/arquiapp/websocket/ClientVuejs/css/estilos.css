@@ -12,13 +12,16 @@ h2{
     align-content: center;
     flex-direction: column;
     text-align: center;
-    font-family: 'Shrikhand', cursive;
-    font-family: 'Courgette', cursive;
+    margin: 5px 0;
+    background-color: yellow;
+}
+h3{
+	font-size: 1.1em;
 }
 
 nav{
 	padding: 5px 20px;
-	background-color: cyan;
+	background-color: greenyellow;
 }
 
 a{
@@ -27,8 +30,8 @@ a{
 	text-align: center;
 	padding: 10px 15px;
 	cursor: pointer;
-	background: cyan;
 	display: inline-flex;
+	background: cyan;
 }
 
 a:hover{
@@ -38,6 +41,12 @@ a:hover{
 label{
 	color: #000000;
 	margin-left: 10%;
+	font-weight: bold;
+}
+
+.containerBtnSaveAndTxtNameQuiz{
+	margin: 5px 0;
+	background-color: red;
 }
 
 #txtNameQuiz{
@@ -47,6 +56,8 @@ label{
 	padding: 2px 10px;
 	font-size: 1em;
 	border: 1px solid black;
+	background-color: #ffffff;
+	border-radius: 10px; 
 }
 
 #btnSaveQuiz{
@@ -62,9 +73,12 @@ label{
 }
 
 .containerQuestion{
-	background: cyan;
+	padding: 20px 0;
 	width: 80%;
 	margin: 0 auto;
+	border: 2px solid #000000;
+	border-radius: 20px;
+	background: green;
 }
 
 .containerQuestion input{
@@ -77,47 +91,54 @@ label{
 
 .txtNameQuestion{
 	width: 99.5%;
-	margin: 5px auto 10px;
+	margin: 5px auto 0px;
+	border-radius: 15px;
+	padding: 2px 0;
 }
 
 .optionQuestion{
 	width: 70%;
+	border-radius: 10px; 
 }
 
 .checkboxOption{
 	width: 40px;
+	cursor: pointer;
 }
 
-#btnSaveQuestion{
+.btnSaveQuestion{
 	border-radius: 15px;
 	background: #ffffff;
 	height: 45px;
 	width: 300px;
+	padding: 10px 85px;
 	border: 2px solid black;
+	margin: 0 auto;
+	display: flex;
 	font-size: 0.9em;
 	font-weight: bold;
 	cursor: pointer;
-	margin: 5px auto;
-	display: flex;
 }
 
 .answerAndOption{
-	background: yellow;
+	padding: 10px 0;
 	width: 90%;
 	margin: 0 auto;
+	background: blue;
 }
 
 .containerOptionQuestions{
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 .questions{
-	margin: 10px auto 5px;
+	margin: 5px auto 5px;
 	text-align: left;
 	display: block;
 	font-weight: bold;
-	font-size: 1.1em;
+	font-size: 1.05em;
 	padding: 5px 0 5px 20px;
+	background-color: cyan;
 }
 
 .btnAddOptionM{
@@ -129,7 +150,7 @@ label{
 	border-radius: 20px;
 	border: 2px solid orange;
 	color: orange;
-	margin: 5px 5px 5px 10px;
+	margin: 10px 5px 5px 10px;
 	cursor: pointer;
 }
 
@@ -142,8 +163,14 @@ label{
 	border-radius: 20px;
 	border: 2px solid purple;
 	color: purple;
-	margin: 5px 5px 5px 10px;
+	margin: 10px 5px 5px 10px;
 	cursor: pointer;
+}
+
+.lblSelect{
+	display: flex;
+	width: 200px;
+	margin: 15px auto 5px;
 }
 
 .btnAddShortA{
@@ -155,12 +182,12 @@ label{
 	border-radius: 20px;
 	border: 2px solid blue;
 	color: blue;
-	margin: 5px 5px 5px 10px;
+	margin: 10px 5px 5px 10px;
 	cursor: pointer;
 }
 
 .containerTrueFalse{
-	width: 80%;
+	width: 250px;
 	margin: 5px auto;
 	font-size: 1em;
 }

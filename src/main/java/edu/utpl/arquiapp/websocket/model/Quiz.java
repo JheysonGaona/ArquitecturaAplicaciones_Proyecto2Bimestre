@@ -15,14 +15,18 @@ public class Quiz implements Serializable {
     private String nombreCuestionario;
     @Column(name = "numPreguntasCuestionario")
     private int numPreguntasCuestionario;
+    @Column(name = "fechaCreacionCuestionario")
+    private String fechaCreacionCuestionario;
+
 
     public Quiz() {
 
     }
 
-    public Quiz(String nombreCuestionario, int numPreguntasCuestionario) {
+    public Quiz(String nombreCuestionario, int numPreguntasCuestionario, String fechaCreacionCuestionario) {
         this.nombreCuestionario = nombreCuestionario;
         this.numPreguntasCuestionario = numPreguntasCuestionario;
+        this.fechaCreacionCuestionario = fechaCreacionCuestionario;
     }
 
     public Long getIdCuestionario() {
@@ -47,5 +51,13 @@ public class Quiz implements Serializable {
 
     public void setNumPreguntasCuestionario(int numPreguntasCuestionario) {
         this.numPreguntasCuestionario = numPreguntasCuestionario;
+    }
+
+    public String getFechaCreacionCuestionario() {
+        return fechaCreacionCuestionario;
+    }
+
+    public void setFechaCreacionCuestionario(String fechaCreacionCuestionario) {
+        this.fechaCreacionCuestionario = fechaCreacionCuestionario;
     }
 }

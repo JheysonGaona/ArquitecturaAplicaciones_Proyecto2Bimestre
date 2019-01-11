@@ -28,16 +28,18 @@ new Vue({
     methods: {
         checkForm: function () {
             if (this.nameQuiz) {
-                this.lists.push({nameQuiz: this.nameQuiz, optionMultiple: this.listOptionMult,
+                if(this.listOptionMult.length != 0 || this.listTrueFalse.length != 0 ||
+                    this.listShortAnswer.length != 0){
+                    this.lists.push({nameQuiz: this.nameQuiz, optionMultiple: this.listOptionMult,
                       optionTrueFalse: this.listTrueFalse, optionShortAnswer: this.listShortAnswer});
-                if(this.lists.length != 0){
                     this.connect();
                     return true;
                 }else{
-                    this.errors.push('Quiz empty');
+                    this.errors.push('Quiz is empty, required.');
+                    return false;
                 }
-            }
-            if (!this.nameQuiz) {
+                
+            }else{
                 this.errors.push('Name Quiz required.');
             }
         },
@@ -83,6 +85,7 @@ new Vue({
             this.btn = bool;
         },
         showQuestion(option){
+            this.nameQuestion = null;
             if(option == this.option){
                 this.option = 0;
             }else{
