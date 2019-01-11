@@ -10,10 +10,8 @@ import edu.utpl.arquiapp.websocket.util.HibernateUtil;
 import org.eclipse.jetty.websocket.api.Session;
 import org.hibernate.Transaction;
 
-import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
