@@ -14,6 +14,11 @@ new Vue({
         btn2: false,
         btn3: false,
         btn4: false,
+        btn1Check: '✘',
+        btn2Check: '✘',
+        btn3Check: '✘',
+        btn4Check: '✘',
+        listBtns: [],
         lists: [],
         errors: [],
         // option multiple
@@ -111,22 +116,42 @@ new Vue({
                 return true;
             }
         },
-        trueFalseBtn: function(number, bool){
+        trueFalseBtn: function(number, bool, message){
             switch (number){
                 case 1:
                     this.btn1 = this.setTrueFalseBtn(this.btn1, bool);
+                    if(message == this.btn1Check){
+                        this.btn1Check = '✘';
+                    }else{
+                        this.btn1Check = '✔';
+                    }
                 break;
 
                 case 2:
                     this.btn2 = this.setTrueFalseBtn(this.btn2, bool);
+                    if(message == this.btn2Check){
+                        this.btn2Check = '✘';
+                    }else{
+                        this.btn2Check = '✔';
+                    }
                 break;
 
                 case 3:
                     this.btn3 = this.setTrueFalseBtn(this.btn3, bool);
+                    if(message == this.btn3Check){
+                        this.btn3Check = '✘';
+                    }else{
+                        this.btn3Check = '✔';
+                    }
                 break;
 
                 case 4:
                     this.btn4 = this.setTrueFalseBtn(this.btn4, bool);
+                    if(message == this.btn4Check){
+                        this.btn4Check = '✘';
+                    }else{
+                        this.btn4Check = '✔';
+                    }
                 break;
             }
         },

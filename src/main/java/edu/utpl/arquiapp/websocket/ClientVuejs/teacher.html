@@ -39,19 +39,19 @@
 					<input v-model="nameQuestion" class="txtNameQuestion" type="text" name="" placeholder="Ingrese su pregunta" v-on:keyup.enter="addQuiz()">
 					<label> A </label>
 					<input v-model="option1" class="optionQuestion" type="text" name="" placeholder="opcion 1">
-					<input class="checkboxOption" type="button" value="✔" v-on:click="trueFalseBtn(1, true)">
+					<input class="checkboxOption" type="button" v-model="btn1Check" v-on:click="trueFalseBtn(1, true, '✔')">
 					<br>
 					<label> B </label>
 					<input v-model="option2" class="optionQuestion" type="text" name="" placeholder="opcion 2">
-					<input class="checkboxOption" type="button" value="✔" v-on:click="trueFalseBtn(2, true)">
+					<input class="checkboxOption" type="button" v-model="btn2Check" v-on:click="trueFalseBtn(2, true, '✔')">
 					<br>
 					<label> C </label>
 					<input v-model="option3" class="optionQuestion" type="text" name="" placeholder="opcion 3">
-					<input class="checkboxOption" type="button" value="✔" v-on:click="trueFalseBtn(3, true)">
+					<input class="checkboxOption" type="button" v-model="btn3Check" v-on:click="trueFalseBtn(3, true, '✔')">
 					<br>
 					<label> D </label>
 					<input v-model="option4" class="optionQuestion" type="text" name="" placeholder="opcion 4">
-					<input class="checkboxOption" type="button" value="✔" v-on:click="trueFalseBtn(4, true)">
+					<input class="checkboxOption" type="button" v-model="btn4Check" v-on:click="trueFalseBtn(4, true, '✔')">
 				</div>
 				<button name="" v-on:click="addQuiz()" class="btnSaveQuestion" type="button">Guardar pregunta</button>
 			</div>
@@ -80,6 +80,7 @@
             	<h3>El servidor dice: {{ msm }} {{ nameQuiz }}</h3>
             
             </div>
+    
             <pre>
             	{{ $data }}
             </pre>
