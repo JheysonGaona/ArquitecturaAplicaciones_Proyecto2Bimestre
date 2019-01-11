@@ -121,6 +121,7 @@ public class MainWSocketTeacher {
                         session.save(shortAnswer);
                     }
                 }
+
                 transaction.commit();
                 session.close();
             }

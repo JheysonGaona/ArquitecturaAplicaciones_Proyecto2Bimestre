@@ -140,6 +140,7 @@ new Vue({
             this.status = 'connected';
             var myJSON = JSON.stringify(this.lists);
             this.sendMessage(myJSON);
+            this.list = [];
         },
         errorWs(evt) {
             this.status = 'error';
