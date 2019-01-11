@@ -18,29 +18,50 @@ CREATE TABLE IF NOT EXISTS docentes (
 -- Table cuestionarios
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS cuestionarios ( 
-  codigo INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los cuestionarios.', 
-  title VARCHAR(200) NOT NULL UNIQUE COMMENT 'nombre del cuestionario.',
+  idCuestionario INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los cuestionarios.', 
+  nombreCuestionario VARCHAR(200) NOT NULL UNIQUE COMMENT 'nombre del cuestionario.',
+  numPreguntasCuestionario INT NOT NULL,
+  fechaCreacionCuestionario DATE NOT NULL,
   fkdocentes INT NOT NULL COMMENT 'FK a docentes',
   FOREIGN KEY (fkdocentes) REFERENCES docentes(codedocentes)) COMMENT='cuestionarios almacenados';
 
 -- -----------------------------------------------------
--- Table preguntas
+-- Table shortAnswer
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS preguntas (
-  codpregunta INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para las preguntas.',
-  pregunta VARCHAR(300) NULL COMMENT 'pregunta almacenada.',
-  fkcuestionarios INT NOT NULL COMMENT 'FK a cuestionarios',
-  FOREIGN KEY (fkcuestionarios) REFERENCES cuestionarios(codigo)) COMMENT='preguntas del cuestionario';
+CREATE TABLE IF NOT EXISTS shortAnswer (
+  idShortAnswer INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para las preguntas.',
+  textAnswer VARCHAR(300) NULL COMMENT 'pregunta almacenada.',
+  idCuestionario INT NOT NULL COMMENT 'FK a cuestionarios',
+  FOREIGN KEY (idCuestionario) REFERENCES cuestionarios(idCuestionario)) COMMENT='preguntas del cuestionario';
+  
+-- -----------------------------------------------------
+-- Table true_false
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS true_false (
+  idTrue_false INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para las preguntas.',
+  textoPregunta VARCHAR(300) NULL COMMENT 'pregunta almacenada.',
+  answer VARCHAR(300) NULL COMMENT 'pregunta almacenada.',
+  idCuestionario INT NOT NULL COMMENT 'FK a cuestionarios',
+  FOREIGN KEY (idCuestionario) REFERENCES cuestionarios(idCuestionario)) COMMENT='preguntas del cuestionario';
 
 -- -----------------------------------------------------
--- Table opciones
+-- Table optionmultiple
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS opciones (
-  codopciones INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los opciones.',
-  opcion VARCHAR(300) NOT NULL COMMENT 'opciones de la pregunta.',
-  respuesta INT NOT NULL COMMENT 'Guarda el ID de la opcion correcta (respuesta).',
-  fkpreguntas INT NOT NULL COMMENT 'FK a areas',
-  FOREIGN KEY (fkpreguntas) REFERENCES preguntas(codpregunta)) COMMENT='preguntas del cuestionario';
+CREATE TABLE IF NOT EXISTS optionmultiple (
+  idOptionMultiple INT AUTO_INCREMENT PRIMARY KEY,
+  textoPregunta VARCHAR(300) NULL COMMENT 'pregunta almacenada.',
+  idCuestionario INT NOT NULL,
+  FOREIGN KEY (idCuestionario) REFERENCES cuestionarios(idCuestionario)) COMMENT='preguntas del cuestionario';
+  
+-- -----------------------------------------------------
+-- Table optionmultipleoptions
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS optionmultipleoptions (
+  idOptionMultipleOptions INT AUTO_INCREMENT PRIMARY KEY,
+  textoOption VARCHAR(300) NULL COMMENT 'opcion almacenada.',
+  answerOption VARCHAR(300) NULL COMMENT 'respuesta entre las opciones.',
+  idOptionMultiple INT NOT NULL,
+  FOREIGN KEY (idOptionMultiple) REFERENCES optionmultiple(idOptionMultiple)) COMMENT='opciones de las preguntas de tipo_opcion_multiple';
 
 -- -----------------------------------------------------
 -- Table estudiantes
@@ -48,18 +69,17 @@ CREATE TABLE IF NOT EXISTS opciones (
 CREATE TABLE IF NOT EXISTS estudiantes (
   idestudiantes INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los estudiantes',
   nombre VARCHAR(100) NOT NULL COMMENT 'nombre del alumno.') COMMENT='estudiantes registrados';
-
+/*
 -- -----------------------------------------------------
 -- Table examenrealizados
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS examenrealizados (
   codexamenrealizados INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los examenrealizados',
   fkestudiante INT NOT NULL COMMENT 'FK a estudiantes',
-  fkpregunta INT NOT NULL COMMENT 'FK a cuestionarios',
-  fkopciones INT NOT NULL COMMENT 'FK a cuestionarios',
-  nota double NOT NULL COMMENT 'Nota del estudiante',
+  fkopciones INT NOT NULL COMMENT 'FK a tp_preguntas_opcion_multiple',
+  fkopciones INT NOT NULL COMMENT 'FK a tp_preguntas_true_false',
+  fkopciones INT NOT NULL COMMENT 'FK a tp_preguntas_opcion_shortAnswer',
   FOREIGN KEY (fkestudiante) REFERENCES estudiantes(idestudiantes),
-  FOREIGN KEY (fkpregunta) REFERENCES preguntas(codpregunta),
+  FOREIGN KEY (fkpregunta) REFERENCES cuestionarios(idCuestionario),
   FOREIGN KEY (fkopciones) REFERENCES opciones(codopciones)) COMMENT='examen realizados';
-
-
+*/
