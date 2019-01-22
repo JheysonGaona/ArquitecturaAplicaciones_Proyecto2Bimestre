@@ -16,10 +16,11 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <mapping class="edu.utpl.arquiapp.websocket.model.Quiz" />
-        <mapping class="edu.utpl.arquiapp.websocket.model.OptionMultiple" />
-        <mapping class="edu.utpl.arquiapp.websocket.model.OptionMultipleOptions" />
-        <mapping class="edu.utpl.arquiapp.websocket.model.True_False" />
-        <mapping class="edu.utpl.arquiapp.websocket.model.ShortAnswer" />
+        <mapping class="edu.utpl.arquiapp.websocket.model.QuestionOptionMultiple" />
+        <mapping class="edu.utpl.arquiapp.websocket.model.OptionsQuestionOptionMultiple" />
+        <mapping class="edu.utpl.arquiapp.websocket.model.QuestionTrueFalse" />
+        <mapping class="edu.utpl.arquiapp.websocket.model.QuestionShortAnswer" />
+
     </session-factory>
 
 </hibernate-configuration>

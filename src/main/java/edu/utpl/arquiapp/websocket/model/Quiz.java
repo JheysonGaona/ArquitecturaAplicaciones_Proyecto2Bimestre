@@ -2,61 +2,73 @@ package edu.utpl.arquiapp.websocket.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name = "cuestionarios")
+@Table(name = "quiz")
 public class Quiz implements Serializable {
 
     @Id
-    @Column(name = "idCuestionario")
+    @Column(name = "idQuiz")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCuestionario;
-    @Column(name = "nombreCuestionario")
-    private String nombreCuestionario;
-    @Column(name = "numPreguntasCuestionario")
-    private int numPreguntasCuestionario;
-    @Column(name = "fechaCreacionCuestionario")
-    private String fechaCreacionCuestionario;
+    private Long idQuiz;
+    @Column(name = "nameQuiz")
+    private String nameQuiz;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "quiz_idQuiz")
+    private List<QuestionOptionMultiple> optionMultiple;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "quiz_idQuiz")
+    private List<QuestionTrueFalse> optionTrueFalse;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "quiz_idQuiz")
+    private List<QuestionShortAnswer> optionShortAnswer;
 
-    public Quiz() {
+    public Quiz(){
 
     }
 
-    public Quiz(String nombreCuestionario, int numPreguntasCuestionario, String fechaCreacionCuestionario) {
-        this.nombreCuestionario = nombreCuestionario;
-        this.numPreguntasCuestionario = numPreguntasCuestionario;
-        this.fechaCreacionCuestionario = fechaCreacionCuestionario;
+    public Quiz(String nameQuiz) {
+        this.nameQuiz = nameQuiz;
     }
 
-    public Long getIdCuestionario() {
-        return idCuestionario;
+    public Long getIdQuiz() {
+        return idQuiz;
     }
 
-    public void setIdCuestionario(Long idCuestionario) {
-        this.idCuestionario = idCuestionario;
+    public void setIdQuiz(Long idQuiz) {
+        this.idQuiz = idQuiz;
     }
 
-    public String getNombreCuestionario() {
-        return nombreCuestionario;
+    public String getNameQuiz() {
+        return nameQuiz;
     }
 
-    public void setNombreCuestionario(String nombreCuestionario) {
-        this.nombreCuestionario = nombreCuestionario;
+    public void setNameQuiz(String nameQuiz) {
+        this.nameQuiz = nameQuiz;
     }
 
-    public int getNumPreguntasCuestionario() {
-        return numPreguntasCuestionario;
+    public List<QuestionOptionMultiple> getOptionMultiple() {
+        return optionMultiple;
     }
 
-    public void setNumPreguntasCuestionario(int numPreguntasCuestionario) {
-        this.numPreguntasCuestionario = numPreguntasCuestionario;
+    public void setOptionMultiple(List<QuestionOptionMultiple> optionMultiple) {
+        this.optionMultiple = optionMultiple;
     }
 
-    public String getFechaCreacionCuestionario() {
-        return fechaCreacionCuestionario;
+    public List<QuestionTrueFalse> getOptionTrueFalse() {
+        return optionTrueFalse;
     }
 
-    public void setFechaCreacionCuestionario(String fechaCreacionCuestionario) {
-        this.fechaCreacionCuestionario = fechaCreacionCuestionario;
+    public void setOptionTrueFalse(List<QuestionTrueFalse> optionTrueFalse) {
+        this.optionTrueFalse = optionTrueFalse;
+    }
+
+    public List<QuestionShortAnswer> getOptionShortAnswer() {
+        return optionShortAnswer;
+    }
+
+    public void setOptionShortAnswer(List<QuestionShortAnswer> optionShortAnswer) {
+        this.optionShortAnswer = optionShortAnswer;
     }
 }

@@ -108,6 +108,10 @@ new Vue({
             this.btn2 = false;
             this.btn3 = false;
             this.btn4 = false;
+            this.btn1Check = '✘';
+            this.btn2Check = '✘';
+            this.btn3Check = '✘';
+            this.btn4Check = '✘';
         },
         setTrueFalseBtn: function(numButton, bool) {
             if(bool == numButton){

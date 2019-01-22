@@ -24,6 +24,7 @@ public class TeacherWebSocketHandler {
 
     @OnWebSocketMessage
     public void onMessage(Session user, String message) {
+        System.out.println(message);
         MainWSocketTeacher.broadcastMessage(MainWSocketTeacher.userUsernameMap.get(user), message);
     }
 }
