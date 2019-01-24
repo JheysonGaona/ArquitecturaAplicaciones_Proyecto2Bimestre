@@ -8,31 +8,36 @@ import java.io.Serializable;
 public class ExamenRealizado implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "codexamenrealizados")
+    @Column(name = "idexamen")
     private int codexamenrealizados;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fkestudiante")
     private Estudiante estudiante;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fkquiz")
     private Quiz Cuestionario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fkopciones")
     private OptionsQuestionOptionMultiple optionMultiple;
 
-    @Column(name = "answerOption")
+    @Column(name = "opcion")
     private boolean answerOption;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fktrue_false")
     private QuestionTrueFalse trueFalse;
 
-    @Column(name = "answer")
+    @Column(name = "truefalse")
     private boolean answer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fkshortanswer")
     private QuestionShortAnswer shortAnswer;
 
-    @Column(name = "textAnswer")
+    @Column(name = "answer")
     private String textAnswer;
 
     public ExamenRealizado() {
@@ -120,4 +125,5 @@ public class ExamenRealizado implements Serializable {
     public void setTextAnswer(String textAnswer) {
         this.textAnswer = textAnswer;
     }
+
 }

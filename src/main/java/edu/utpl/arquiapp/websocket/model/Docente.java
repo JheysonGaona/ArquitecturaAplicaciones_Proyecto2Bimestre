@@ -5,6 +5,7 @@ package edu.utpl.arquiapp.websocket.model;/*
  */
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,8 +22,7 @@ public class Docente {
     @Column(name = "nombre")
     String nombre;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "docentes_codedocentes")
+    @OneToMany
     private List<Quiz> cuestionario;
 
     public Docente() {

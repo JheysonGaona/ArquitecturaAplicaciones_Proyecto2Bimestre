@@ -12,7 +12,7 @@ USE DB_cuestionario;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS docentes (
   codedocentes INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los docenteses',
-  nombre VARCHAR(200) NOT NULL UNIQUE COMMENT 'Nombre del docentes') COMMENT='docentes del cuestionario';
+  nombre VARCHAR(200) NOT NULL COMMENT 'Nombre del docentes') COMMENT='docentes del cuestionario';
 
 -- -----------------------------------------------------
 -- Table quiz
@@ -20,8 +20,6 @@ CREATE TABLE IF NOT EXISTS docentes (
 CREATE TABLE IF NOT EXISTS quiz ( 
   idQuiz INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los quiz.', 
   nameQuiz VARCHAR(200) NOT NULL UNIQUE COMMENT 'nombre del cuestionario.',
-  numPreguntasCuestionario INT NOT NULL,
-  fechaCreacionCuestionario VARCHAR(10) NOT NULL,
   fkdocentes INT NOT NULL COMMENT 'FK a docentes',
   FOREIGN KEY (fkdocentes) REFERENCES docentes(codedocentes)) COMMENT='quiz almacenados';
 
@@ -75,14 +73,20 @@ CREATE TABLE IF NOT EXISTS estudiantes (
 -- Table examenrealizados
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS examenrealizados (
-  codexamenrealizados INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los examenrealizados',
+  idexamen INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK codigo autoincrementable para los examenrealizados',
   fkestudiante INT NOT NULL COMMENT 'FK a estudiantes',
   fkquiz INT NOT NULL COMMENT 'FK a quiz',
   fkopciones INT NOT NULL COMMENT 'FK a tp_preguntas_opcion_multiple',
+  opcion tinyint(1) NOT NULL COMMENT 'respuesta entre las opciones.',
   fktrue_false INT NOT NULL COMMENT 'FK a tp_preguntas_true_false',
+  truefalse bit(1) NULL COMMENT 'pregunta almacenada.',
   fkshortanswer INT NOT NULL COMMENT 'FK a tp_preguntas_opcion_shortAnswer',
+  answer VARCHAR(300) NULL COMMENT 'pregunta almacenada.',
   FOREIGN KEY (fkestudiante) REFERENCES estudiantes(idestudiantes),
   FOREIGN KEY (fkquiz) REFERENCES quiz(idQuiz),
   FOREIGN KEY (fkopciones) REFERENCES optionmultipleoptions(idQuestionOptionMultiple),
   FOREIGN KEY (fktrue_false) REFERENCES true_false(idQuestionTrueFalse),
   FOREIGN KEY (fkshortanswer) REFERENCES shortAnswer(idQuestionShortAnswer)) COMMENT='examen realizados';
+
+INSERT INTO `estudiantes`(`nombre`) VALUES ('Luis Benitez'), ('Rosa Pineda');
+INSERT INTO `docentes`(`nombre`) VALUES ('Sara Loaiza'), ('Pablo Cabrera');

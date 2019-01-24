@@ -2,6 +2,7 @@ package edu.utpl.arquiapp.websocket.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "optionmultipleoptions")
@@ -15,8 +16,11 @@ public class OptionsQuestionOptionMultiple implements Serializable {
     private String textOption;
     @Column(name = "answer")
     private boolean answer;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idQuestionOptionMultiple")
     private QuestionOptionMultiple questionOptionMultiple;
+    @OneToMany
+    private List<ExamenRealizado> examenRealizado;
 
     public OptionsQuestionOptionMultiple(){
 
@@ -26,6 +30,13 @@ public class OptionsQuestionOptionMultiple implements Serializable {
         this.textOption = textOption;
         this.answer = answer;
         this.questionOptionMultiple = questionOptionMultiple;
+    }
+
+    public OptionsQuestionOptionMultiple(String textOption, boolean answer, QuestionOptionMultiple questionOptionMultiple, List<ExamenRealizado> examenRealizado) {
+        this.textOption = textOption;
+        this.answer = answer;
+        this.questionOptionMultiple = questionOptionMultiple;
+        this.examenRealizado = examenRealizado;
     }
 
     public Long getIdOption() {
@@ -59,4 +70,13 @@ public class OptionsQuestionOptionMultiple implements Serializable {
     public void setQuestionOptionMultiple(QuestionOptionMultiple questionOptionMultiple) {
         this.questionOptionMultiple = questionOptionMultiple;
     }
+
+    public List<ExamenRealizado> getExamenRealizado() {
+        return examenRealizado;
+    }
+
+    public void setExamenRealizado(List<ExamenRealizado> examenRealizado) {
+        this.examenRealizado = examenRealizado;
+    }
+
 }

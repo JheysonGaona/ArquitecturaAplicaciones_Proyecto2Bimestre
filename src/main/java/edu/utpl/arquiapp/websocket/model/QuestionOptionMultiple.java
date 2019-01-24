@@ -14,11 +14,11 @@ public class QuestionOptionMultiple implements Serializable {
     private Long idQuestionOptionMultiple;
     @Column(name = "textQuestion")
     private String textQuestion;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "QuestionOptionMultiple_idQuestionOptionMultiple")
-    private List<OptionsQuestionOptionMultiple> options;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idQuiz")
     private Quiz quiz;
+    @OneToMany
+    private List<OptionsQuestionOptionMultiple> options;
 
     public QuestionOptionMultiple(){
 

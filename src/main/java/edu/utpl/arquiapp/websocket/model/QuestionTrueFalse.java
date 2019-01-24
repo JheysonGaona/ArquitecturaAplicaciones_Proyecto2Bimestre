@@ -2,6 +2,7 @@ package edu.utpl.arquiapp.websocket.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "true_false")
@@ -15,8 +16,11 @@ public class QuestionTrueFalse  implements Serializable {
     private String textQuestion;
     @Column(name = "answer")
     private boolean answer;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idQuiz")
     private Quiz quiz;
+    @OneToMany
+    private List<ExamenRealizado> examenRealizado;
 
     public QuestionTrueFalse(){
 
@@ -26,6 +30,13 @@ public class QuestionTrueFalse  implements Serializable {
         this.textQuestion = textQuestion;
         this.answer = answer;
         this.quiz = quiz;
+    }
+
+    public QuestionTrueFalse(String textQuestion, boolean answer, Quiz quiz, List<ExamenRealizado> examenRealizado) {
+        this.textQuestion = textQuestion;
+        this.answer = answer;
+        this.quiz = quiz;
+        this.examenRealizado = examenRealizado;
     }
 
     public Long getIdQuestionTrueFalse() {
@@ -59,4 +70,13 @@ public class QuestionTrueFalse  implements Serializable {
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
     }
+
+    public List<ExamenRealizado> getExamenRealizado() {
+        return examenRealizado;
+    }
+
+    public void setExamenRealizado(List<ExamenRealizado> examenRealizado) {
+        this.examenRealizado = examenRealizado;
+    }
+
 }
