@@ -4,8 +4,10 @@ import edu.utpl.arquiapp.websocket.handlers.TeacherWebSocketHandler;
 import edu.utpl.arquiapp.websocket.model.*;
 import edu.utpl.arquiapp.websocket.util.HibernateUtil;
 import org.eclipse.jetty.websocket.api.Session;
+import org.hibernate.Criteria;
 import org.hibernate.Transaction;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -23,6 +25,7 @@ public class MainWSocketTeacher {
     public static void main(String[] args) {
         webSocket("/CreateQuiz", TeacherWebSocketHandler.class);
         init();
+        consulta2();
     }
 
     public static void broadcastMessage(String sender, String message) {
@@ -43,6 +46,16 @@ public class MainWSocketTeacher {
         transaction = session.beginTransaction();
         session.save(cuestionario);
         transaction.commit();
+        session.close();
+    }
+
+    public static void consulta2(){
+        session = HibernateUtil.getSessionFactory().openSession();
+        Criteria cr = session.createCriteria(Docente.class);
+        cr.setFirstResult(0);
+        cr.setMaxResults(10);
+        List results = cr.list();
+        results.stream().forEach(System.err::println);
         session.close();
     }
 }
