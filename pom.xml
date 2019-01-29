@@ -96,10 +96,24 @@
             <artifactId>hibernate-jpa-2.1-api</artifactId>
             <version>1.0.0.Final</version>
         </dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20160212</version>
+=======
+
+        <!-- Manejo de LOG's -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+>>>>>>> 825215dfbf0196b533b1ba18f820fedc519de628
         </dependency>
     </dependencies>
 

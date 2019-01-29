@@ -14,6 +14,7 @@ public class Quiz implements Serializable {
     private Long idQuiz;
     @Column(name = "nameQuiz")
     private String nameQuiz;
+<<<<<<< HEAD
     @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionOptionMultiple> optionMultiple;
@@ -22,7 +23,21 @@ public class Quiz implements Serializable {
     private List<QuestionTrueFalse> optionTrueFalse;
     @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "quiz_idQuiz")
+=======
+    @OneToMany
+    private List<QuestionOptionMultiple> optionMultiple;
+    @OneToMany
+    private List<QuestionTrueFalse> optionTrueFalse;
+    @OneToMany
+>>>>>>> 825215dfbf0196b533b1ba18f820fedc519de628
     private List<QuestionShortAnswer> optionShortAnswer;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fkdocentes")
+    private Docente docente;
+
+    @OneToMany
+    private List<ExamenRealizado> examenRealizado;
 
     public Quiz(){
 
@@ -38,6 +53,17 @@ public class Quiz implements Serializable {
 
     public Quiz(String nameQuiz) {
         this.nameQuiz = nameQuiz;
+    }
+
+    public Quiz(String nameQuiz, Docente docente) {
+        this.nameQuiz = nameQuiz;
+        this.docente = docente;
+    }
+
+    public Quiz(String nameQuiz, Docente docente, List<ExamenRealizado> examenRealizado) {
+        this.nameQuiz = nameQuiz;
+        this.docente = docente;
+        this.examenRealizado = examenRealizado;
     }
 
     public Long getIdQuiz() {
@@ -75,4 +101,21 @@ public class Quiz implements Serializable {
     public void setOptionShortAnswer(List<QuestionShortAnswer> optionShortAnswer) {
         this.optionShortAnswer = optionShortAnswer;
     }
+
+    public Docente getDocente() {
+        return docente;
+    }
+
+    public void setDocente(Docente docente) {
+        this.docente = docente;
+    }
+
+    public List<ExamenRealizado> getExamenRealizado() {
+        return examenRealizado;
+    }
+
+    public void setExamenRealizado(List<ExamenRealizado> examenRealizado) {
+        this.examenRealizado = examenRealizado;
+    }
+
 }
