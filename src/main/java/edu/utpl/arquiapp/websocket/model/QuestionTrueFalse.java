@@ -15,17 +15,15 @@ public class QuestionTrueFalse  implements Serializable {
     private String textQuestion;
     @Column(name = "answer")
     private boolean answer;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Quiz quiz;
+
 
     public QuestionTrueFalse(){
 
     }
 
-    public QuestionTrueFalse(String textQuestion, boolean answer, Quiz quiz) {
+    public QuestionTrueFalse(String textQuestion, boolean answer) {
         this.textQuestion = textQuestion;
         this.answer = answer;
-        this.quiz = quiz;
     }
 
     public Long getIdQuestionTrueFalse() {
@@ -52,11 +50,4 @@ public class QuestionTrueFalse  implements Serializable {
         this.answer = answer;
     }
 
-    public Quiz getQuiz() {
-        return quiz;
-    }
-
-    public void setQuiz(Quiz quiz) {
-        this.quiz = quiz;
-    }
 }

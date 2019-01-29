@@ -15,17 +15,15 @@ public class OptionsQuestionOptionMultiple implements Serializable {
     private String textOption;
     @Column(name = "answer")
     private boolean answer;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private QuestionOptionMultiple questionOptionMultiple;
+
 
     public OptionsQuestionOptionMultiple(){
 
     }
 
-    public OptionsQuestionOptionMultiple(String textOption, boolean answer, QuestionOptionMultiple questionOptionMultiple) {
+    public OptionsQuestionOptionMultiple(String textOption, boolean answer) {
         this.textOption = textOption;
         this.answer = answer;
-        this.questionOptionMultiple = questionOptionMultiple;
     }
 
     public Long getIdOption() {
@@ -52,11 +50,4 @@ public class OptionsQuestionOptionMultiple implements Serializable {
         this.answer = answer;
     }
 
-    public QuestionOptionMultiple getQuestionOptionMultiple() {
-        return questionOptionMultiple;
-    }
-
-    public void setQuestionOptionMultiple(QuestionOptionMultiple questionOptionMultiple) {
-        this.questionOptionMultiple = questionOptionMultiple;
-    }
 }

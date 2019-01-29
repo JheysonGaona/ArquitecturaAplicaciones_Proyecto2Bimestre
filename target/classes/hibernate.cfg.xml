@@ -21,6 +21,13 @@
         <mapping class="edu.utpl.arquiapp.websocket.model.QuestionTrueFalse" />
         <mapping class="edu.utpl.arquiapp.websocket.model.QuestionShortAnswer" />
 
+
+        <mapping class="edu.utpl.arquiapp.websocket.model2.Cuestionario" />
+        <mapping class="edu.utpl.arquiapp.websocket.model2.OpcionesOpcionMultiple" />
+        <mapping class="edu.utpl.arquiapp.websocket.model2.OpcionMultiple" />
+        <mapping class="edu.utpl.arquiapp.websocket.model2.VerdaderoFalso" />
+        <mapping class="edu.utpl.arquiapp.websocket.model2.RespuestaCorta" />
+
     </session-factory>
 
 </hibernate-configuration>

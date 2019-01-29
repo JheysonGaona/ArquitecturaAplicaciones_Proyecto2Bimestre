@@ -15,17 +15,15 @@ public class QuestionShortAnswer  implements Serializable {
     private String textQuestion;
     @Column(name = "answer")
     private String answer;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Quiz quiz;
+
 
     public QuestionShortAnswer(){
 
     }
 
-    public QuestionShortAnswer(String textQuestion, String answer, Quiz quiz) {
+    public QuestionShortAnswer(String textQuestion, String answer) {
         this.textQuestion = textQuestion;
         this.answer = answer;
-        this.quiz = quiz;
     }
 
     public Long getIdQuestionShortAnswer() {
@@ -52,11 +50,4 @@ public class QuestionShortAnswer  implements Serializable {
         this.answer = answer;
     }
 
-    public Quiz getQuiz() {
-        return quiz;
-    }
-
-    public void setQuiz(Quiz quiz) {
-        this.quiz = quiz;
-    }
 }

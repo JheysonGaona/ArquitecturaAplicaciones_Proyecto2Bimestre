@@ -14,18 +14,26 @@ public class Quiz implements Serializable {
     private Long idQuiz;
     @Column(name = "nameQuiz")
     private String nameQuiz;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionOptionMultiple> optionMultiple;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionTrueFalse> optionTrueFalse;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionShortAnswer> optionShortAnswer;
 
     public Quiz(){
 
+    }
+
+    public Quiz(String nameQuiz, List<QuestionOptionMultiple> optionMultiple, List<QuestionTrueFalse> optionTrueFalse,
+                List<QuestionShortAnswer> optionShortAnswer) {
+        this.nameQuiz = nameQuiz;
+        this.optionMultiple = optionMultiple;
+        this.optionTrueFalse = optionTrueFalse;
+        this.optionShortAnswer = optionShortAnswer;
     }
 
     public Quiz(String nameQuiz) {
@@ -34,10 +42,6 @@ public class Quiz implements Serializable {
 
     public Long getIdQuiz() {
         return idQuiz;
-    }
-
-    public void setIdQuiz(Long idQuiz) {
-        this.idQuiz = idQuiz;
     }
 
     public String getNameQuiz() {
