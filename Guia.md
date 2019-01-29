@@ -72,7 +72,9 @@ Dichas dependencias son librerías necesarias para la ejecución exitosa del pro
     A continuación unos ejemplos muy sencillos:
     - JSON a Objeto
     
+    ```JAVA
     var cuestionario = gson.fromJson(message, Quiz.class);
+    ```
     
     Aqui convertimos el JSON resultante a un objeto de tipo **Quiz**.
 
