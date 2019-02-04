@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My socrative</title>
+    <link rel="stylesheet" type="text/css" href="css/estilosStudent.css">
+</head>
+<body>
+    <header>
+        <h1>My Socrative</h1>
+    </header>
+    <div id="app">
+        <div id="formLogin" v-if="!status">
+            <div id="containerTxtKeyConnected">
+                <label>Clave de sala</label>
+                <input id="txtKeyConnected" v-model="key" type="text" name="txtKey" placeholder="Ingrese el codigo de la sala">
+            </div>
+            <button id="btnEnterKey" v-on:click="connect">Conectar</button>
+        </div>
+        
+        <div id="containerQuiz" v-if="status === 'connected'">
+
+            <h2>{{ nameQuiz }} </h2>
+
+            <div v-if="option === 1">
+                <div id="containerInitial">
+                    <h4>{{ nameQuestion }}</h4>
+                    <div class="divContainer">
+                        <button id="1" class="btnCheckAnswer" v-on:click="answer1 = !answer1" :class="{btnCheckAnswerFalse: answer1}"></button>
+                        <label for="1">{{option1 }}</label>    
+                    </div>
+                    <div class="divContainer">
+                        <button id="2" class="btnCheckAnswer" v-on:click="answer2 = !answer2" :class="{btnCheckAnswerFalse: answer2}"></button>
+                        <label for="2">{{option2 }}</label>
+                    </div>
+                    <div class="divContainer">
+                        <button id="3" class="btnCheckAnswer" v-on:click="answer3 = !answer3" :class="{btnCheckAnswerFalse: answer3}"></button>
+                        <label for="3">{{option3 }}</label>    
+                    </div>
+                    <div class="divContainer">
+                        <button id="4" class="btnCheckAnswer" v-on:click="answer4 = !answer4" :class="{btnCheckAnswerFalse: answer4}"></button>
+                        <label for="4">{{option4 }}</label>
+                    </div>
+                    <button class="btnNext" v-on:click="segPregunta">Siguiente Pregunta</button>
+                </div>
+            </div>
+
+            <div v-if="option === 2">
+                
+                <div id="containerInitial">
+                    <h4 id="lblTrueFalseMsms">{{ nameQuestion }}</h4>
+                    <button class="btnOptionTrueFalse" v-on:click="setTrueFalse(true)" :class="{green: answerTrueFalse}">Verdadero</button>
+                    <button class="btnOptionTrueFalse" v-on:click="setTrueFalse(false)" :class="{red: !answerTrueFalse}">Falso</button>
+                    <br>
+                    <button class="btnNext" v-on:click="segPregunta">Siguiente Pregunta</button>
+                </div>
+            </div>
+
+            <div v-if="option === 3">
+                <div id="containerInitial">
+                    <h4>{{ nameQuestion }}</h4>
+                    <input id="txtShortAnswer" type="text" name="" placeholder="Ingresa tu respuesta">
+                    <br>
+                    <button class="btnNext" v-on:click="segPregunta">Siguiente Pregunta</button>
+                </div>
+            </div>
+
+
+
+            <!--
+           
+            <h3>Nombre del cuestionario: {{ survey.nameQuiz }}</h3>
+              
+            <h2>Preguntas de opción múltiple</h2>  
+            <div class="containerQuestion">
+                <div v-for="question in survey.optionMultiple">
+                    <h4>{{ question.textQuestion }}</h4>
+                    <div id="containerOptions">
+                        <template-optionmultiple id="optionMultiple" v-for="option in question.options" v-bind:option="option" v-bind:groupid=" question.idQuestionOptionMultiple">
+                        </template-optionmultiple> 
+                    </div>
+                </div>
+            </div>
+
+            <h2>Option true false</h2>
+            <div class="containerQuestion">
+                <div v-for="question in survey.optionTrueFalse">
+                    <h4 id="lblTrueFalse">{{ question.textQuestion }}</h4>
+                    <template-optiontruefalse v-bind:option="question">
+                    </template-optiontruefalse>
+                </div>
+            </div>
+
+            <h2>Option short answer</h2>
+            <div class="containerQuestion">
+                <div v-for="question in survey.optionShortAnswer">
+                    <h4 id="lblShortAnswer">{{ question.textQuestion }}</h4>
+                    <template-optionshortanswer v-bind:option="question">
+                    </template-optionshortanswer>
+                </div>
+            </div>
+            <button id="btnExit">Enviar respuestas</button>
+            -->
+        </div>  
+     <!---
+        <pre>
+            {{ $data }}
+        </pre>
+    -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/student.js"></script>
+</body>
+</html>

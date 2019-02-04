@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	/*background-image: url('../img/teacher.jpg');
+	 */background-attachment: fixed;
+	background-repeat: no-repeat;
+    background-position: right;
+    background-size: 650px;
+    background-position-y: 60px;
+}
+
+h1{
+	height: 70px;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    border: 2px solid black;
+    background-color:rgba(61, 255, 53, 0.7);
+	box-shadow: 0px 0px 20px 10px rgba(73,166,68,0.8);
+}
+
+#formLogin{
+	border: 2px solid #404040;
+	border-radius: 10px;
+	padding: 30px;
+	width: 310px;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color:rgba(61, 255, 53, 0.7);
+	box-shadow: 0px 0px 20px 10px rgba(73,166,68,0.8);
+}
+
+
+h2{
+	height: 40px;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    font-size: 1.3em;
+    border: 3px solid black;
+    border-bottom: 0px;
+    background-color:rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.8);
+	color: #ffffff;
+	font-weight: bold;
+}
+
+h3{
+	text-align: center;
+	padding: 10px 0;
+	margin: 30px auto 30px;
+	font-size: 1.5em;
+	background-color:rgba(61, 255, 53, 0.7);
+	box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.8);
+}
+
+h4{
+	margin: 10px 0 5px 50px;
+	font-size: 1.2em;	
+}
+
+#lblTrueFalse{
+	margin: 30px 0 5px;
+	text-align: center;
+}
+
+#lblShortAnswer{
+	margin: 20px 0 15px;
+	text-align: center;
+}
+
+.form-check{
+	margin-bottom: 10px;
+}
+
+.form-check-label{
+	margin-left: 5px;
+
+}
+
+.containerQuestion{
+	background-color:rgba(61, 255, 53, 0.6);
+	border: 3px solid #000000;
+	margin: 0 auto 60px;
+}
+
+#containerOptions{
+	margin: 0 50px;
+}
+
+.form-button{
+	width: 285px;
+	margin: 0 auto 20px;
+}
+
+.btnTrueFalse{
+	border: 2px solid #000000;
+	margin: 5px;
+	font-size: 1em;
+	font-weight: bold;
+	width: 130px;
+	height: 45px;
+	background-color: #ffffff;
+}
+
+#txtShortAnswer{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	border-radius: 10px;
+	border: 2px solid black;
+	margin: 10px 0 15px;
+	font-size: 1.2em;
+	color: #000000;
+}
+
+.btnOptionTrueFalse{
+	background-color: white;
+	height: 40px;
+	width: 140px;
+	font-size: 1em;
+	color: black;
+	border: 2px solid black;
+	margin: 0 5px 20px;
+}
+
+.green{
+	background-color: #8ec551;
+}
+
+.red{
+	background-color: #f74343;
+}
+
+#optionMultiple{
+	margin-left: 20px;
+}
+
+#containerTxtKeyConnected{
+	width: 100%;
+}
+
+#txtKeyConnected{
+	width: 99%;
+	height: 35px;
+	margin: 10px 0 5px; 
+	border: 2px solid #000000;
+	text-align: center;
+	border-radius: 5px; 
+}
+
+#btnEnterKey{
+	margin: 10px 0 0;
+	width: 100%;
+	height: 40px;
+	background-color: #ffffff;
+	border: 2px solid #000000;
+	border-radius: 5px;
+	font-size: 0.9em;
+	color: #000000;
+	font-weight: bold;
+	background-color: #488aff;
+}
+
+#containerQuiz{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.txtAnswer{
+	border: 2px solid #000000;
+	width: 80%;
+	font-size: 0.9em;
+	height: 40px;
+	margin: 0 auto 30px;
+	display: flex;
+	text-align: center;
+}
+
+input:focus{
+	border: 1px solid #00FFF5;
+}
+
+button{
+	cursor: pointer;
+}
+
+#containerInitial{
+	margin: 40px 0 0;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 20px 10px;
+}
+
+label{
+	margin-left: 5px;
+}
+
+.btnNext{
+	height: 45px;
+	width: 250px;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+	display: flex;
+	padding: 10px 0 0 55px;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.btnCheckAnswer{
+	background-image: url('../img/X.png');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: center;
+	border: none;
+	width: 35px;
+	height: 35px;
+}
+
+.btnCheckAnswerFalse{
+	background-image: url('../img/V.png');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: center;
+	border: none;
+	width: 35px;
+	height: 35px;
+}

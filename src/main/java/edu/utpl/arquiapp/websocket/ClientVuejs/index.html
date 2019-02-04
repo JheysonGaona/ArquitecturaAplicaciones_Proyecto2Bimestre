@@ -1,156 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <title>My socrative</title>
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
-    <meta property="og:locale" 				content="es_ES"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Shrikhand" rel="stylesheet">
-    <!-- ICONO -->
-    <link rel="icon" type="image/png" href="img/teacher.jpg"/>
+    <link rel="stylesheet" type="text/css" href="css/estilosIndex.css">
 </head>
-
 <body>
-    <div class="container">
-    	<header id="teacherLoggedIn">
-			<h1 class="text-center">My Socrative</h1>
-		</header>
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-xs-12" id="cruddocente">
-                    <!-- Formulario para añadir Docentes -->
-                    <section class="form">
-                        <h4 class="text-center">Docentes</h4>
-                        <form action="" class="text-center">
-                            <input v-model="nombre" @keyup.enter="crearDocente" type="text" class="form-control" placeholder="Nombre del Docente">
-                            <!-- Botón para añadir -->
-                            <input @click="crearDocente" type="button" value="Añadir" class="btn btn-success">
-                        </form>
-                    </section>
-                    <!-- Tabla donde se muestran los datos -->
-                    <section class="data">
-                        <caption>Docentes Registrados</caption>
-                        <table class="table table-bordered">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">Nombre</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(profesor, index) in Docentes">
-                                    <td>{{ profesor.codedocentes }}</td>
-                                    <td>
-                                        <span v-if="formActualizar && idActualizar == index">
-                                            <!-- Formulario para actualizar -->
-                                            <input v-model="nombreActualizar" type="text" class="form-control">
-                                        </span>
-                                        <span v-else>
-                                            <!-- Dato nombre -->
-                                            {{ profesor.nombre }}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <!-- Botón para guardar la información actualizada -->
-                                        <span v-if="formActualizar && idActualizar == index">
-                                            <button @click="guardarActualizacion(index)" class="btn btn-success">Guardar</button>
-                                        </span>
-                                        <span v-else>
-                                            <!-- Botón para mostrar el formulario de actualizar -->
-                                            <button @click="verFormActualizar(index)" class="btn btn-warning">Actualizar</button>
-                                            <!-- Botón para borrar -->
-                                            <button @click="borrarDocente(index)" class="btn btn-danger">Borrar</button>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-
-                <div class="col-xs-12" id="crudAlumno">
-                    <!-- Formulario para añadir Alumnos -->
-                    <section class="form">
-                        <h4 class="text-center">Alumnos</h4>
-                        <form action="" class="text-center">
-                            <input v-model="nombreAlumno" @keyup.enter="crearEstudiante" type="text" class="form-control" placeholder="Nombre del Alumno">
-                            <!-- Botón para añadir -->
-                            <input @click="crearEstudiante" type="button" value="Añadir" class="btn btn-success">
-                        </form>
-                    </section>
-                    <!-- Tabla donde se muestran los datos -->
-                    <section class="data">
-                        <caption>Estudiantes Registrados</caption>
-                        <table class="table table-bordered">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">Nombre</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(estudiante, index) in Alumnos">
-                                    <td>{{ estudiante.idestudiantes }}</td>
-                                    <td>
-                                        <span v-if="formActualizar && idActualizar == index">
-                                            <!-- Formulario para actualizar -->
-                                            <input v-model="nombreEstudiante" type="text" class="form-control">
-                                        </span>
-                                        <span v-else>
-                                            <!-- Dato nombre -->
-                                            {{ estudiante.nombre }}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <!-- Botón para guardar la información actualizada -->
-                                        <span v-if="formActualizar && idActualizar == index">
-                                            <button @click="guardarAlumno(index)" class="btn btn-success">Guardar</button>
-                                        </span>
-                                        <span v-else>
-                                            <!-- Botón para mostrar el formulario de actualizar -->
-                                            <button @click="verFormAlumno(index)" class="btn btn-warning">Actualizar</button>
-                                            <!-- Botón para borrar -->
-                                            <button @click="borrarALumno(index)" class="btn btn-danger">Borrar</button>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-            </div>
-            
-            
-            <div class="row">
-                <h1>Lista de estudiantes</h1>
-            </div>
-            <div id="app">
-                <ul class="list-group">
-                    <student v-for="student in students" :student="student"></student>
-                </ul>
-                <pre>
-                   {{ $data }}
-                 </pre>
-
-            </div>
-            <template id="template-student">
-                <li class="list-group-item">
-                    {{ student.name }}
-                    <button @click="deleteStudent(student)" class="btn btn-danger">Eliminar</button>
-                </li>
-            </template>
-        </div>
-    </div>
-    <!-- Uso de Vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="js/crudpersonas.js"></script>
-    
+	<header>
+		<h1>My Socrative</h1>
+		<nav>
+			<div>
+				<a href="student.html"><img id="img1" src="img/estudiante.jpg"></a>
+				<div id="lblProfesor" for="img11">Estudiante</div>
+			</div>
+			<div>
+				<a href="teacher.html"><img id="img2" src="img/profesor.jpg"></a>
+				<div id="lblEstudiante">Profesor</div>
+			</div>
+		</nav>
+	</header>
+</form> 
 </body>
 </html>

@@ -1,0 +1,86 @@
+{
+	"nameQuiz":"prueba",
+	"optionMultiple":
+		[
+			{
+				"id": 1,
+				"textQuestion":"dime tu nombre",
+				"options":
+					[
+						{
+							"id": 1,
+							"textOption":"jheyson",
+							"answer":true
+						},
+						{
+							"id": 2,
+							"textOption":"gaona",
+							"answer":false
+						},
+						{
+							"id": 3,
+							"textOption":"pineda",
+							"answer":false
+						},
+						{
+							"id": 4,
+							"textOption":"steven",
+							"answer":true
+						}
+					]
+			},
+			{
+				"id": 2,
+				"textQuestion":"mañana es lunes",
+				"options":
+					[
+						{
+							"id": 1,
+							"textOption":"si",
+							"answer":false
+						},
+						{
+							"id": 2,
+							"textOption":"no ",
+							"answer":true
+						},
+						{
+							"id": 3,
+							"textOption":"talves",
+							"answer":false
+						},
+						{
+							"id": 4,
+							"textOption":"ninguna",
+							"answer":false
+						}
+					]
+			}
+		],
+	"optionTrueFalse":
+		[
+			{
+				"id": 1,
+				"textQuestion":"hola manager",
+				"answer":false
+			},
+			{
+				"id": 2,
+				"textQuestion":"hola mundo",
+				"answer":true
+			},
+			{
+				"id": 3,
+				"textQuestion":"jejeje",
+				"answer":true
+			}
+		],
+	"optionShortAnswer":
+		[
+			{
+				"id": 1,
+				"textQuestion":"dime tu nombre xfavor",
+				"answer":"jheyson"
+			}
+		]
+}

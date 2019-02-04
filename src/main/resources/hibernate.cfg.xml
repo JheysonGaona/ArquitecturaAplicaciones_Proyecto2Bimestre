@@ -15,6 +15,7 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.current_session_context_class">thread</property>
 
+        <mapping class="edu.utpl.arquiapp.websocket.model.Teacher" />
         <mapping class="edu.utpl.arquiapp.websocket.model.Quiz" />
         <mapping class="edu.utpl.arquiapp.websocket.model.QuestionOptionMultiple" />
         <mapping class="edu.utpl.arquiapp.websocket.model.OptionsQuestionOptionMultiple" />

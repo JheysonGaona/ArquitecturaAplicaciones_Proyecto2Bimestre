@@ -2,10 +2,9 @@ package edu.utpl.arquiapp.websocket.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
-@Table(name = "shortanswer")
+@Table(name = "shortAnswer")
 public class QuestionShortAnswer  implements Serializable {
 
     @Id
@@ -16,16 +15,7 @@ public class QuestionShortAnswer  implements Serializable {
     private String textQuestion;
     @Column(name = "answer")
     private String answer;
-<<<<<<< HEAD
 
-=======
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "idQuiz")
-    private Quiz quiz;
->>>>>>> 825215dfbf0196b533b1ba18f820fedc519de628
-
-    @OneToMany
-    private List<ExamenRealizado> examenRealizado;
 
     public QuestionShortAnswer(){
 
@@ -34,13 +24,6 @@ public class QuestionShortAnswer  implements Serializable {
     public QuestionShortAnswer(String textQuestion, String answer) {
         this.textQuestion = textQuestion;
         this.answer = answer;
-    }
-
-    public QuestionShortAnswer(String textQuestion, String answer, Quiz quiz, List<ExamenRealizado> examenRealizado) {
-        this.textQuestion = textQuestion;
-        this.answer = answer;
-        this.quiz = quiz;
-        this.examenRealizado = examenRealizado;
     }
 
     public Long getIdQuestionShortAnswer() {
@@ -67,22 +50,4 @@ public class QuestionShortAnswer  implements Serializable {
         this.answer = answer;
     }
 
-<<<<<<< HEAD
-=======
-    public Quiz getQuiz() {
-        return quiz;
-    }
-
-    public void setQuiz(Quiz quiz) {
-        this.quiz = quiz;
-    }
-
-    public List<ExamenRealizado> getExamenRealizado() {
-        return examenRealizado;
-    }
-
-    public void setExamenRealizado(List<ExamenRealizado> examenRealizado) {
-        this.examenRealizado = examenRealizado;
-    }
->>>>>>> 825215dfbf0196b533b1ba18f820fedc519de628
 }
