@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>My socrative</title>
+    <link rel="stylesheet" type="text/css" href="css/estilosTeacher.css">
+
+</head>
+<body>
+	<header>
+		<h2>My Socrative</h2>
+		<nav>
+			<a href="teacher.html">Crear cuestionario</a>
+			<a href="viewQuiz.html">Ver cuestionarios</a>
+			<a href="downloadResult.html">Descargar resultados</a>
+		</nav>
+	</header>
+	<!-- Cuerpo para la aplicacion del vuejs -->
+	<div id="app">
+		<div>
+			<h4 style="font-size: 1.2em; margin-left: 5px;">Mis cuestionarios</h4>
+			<div style="margin: 5px;" v-for="actual in listQuiz" id="">
+                <fieldset>
+                    <q-option2 v-bind:opcion="actual"></q-option2>
+                </fieldset>
+            </div>
+            <label style="font-size: 1em; margin-left: 5px;"><b>Seleccione un cuestionario</b></label>
+            <br>
+			<button style="width: 300px; height: 45px; border: 2px solid black; margin: 5px; font-weight: bold; background-color: yellow;" @click="hola">Cargar contenido</button>
+
+			<div class="containerQuestion" v-if="result > 0">
+	        	<div style="display: flex; margin: 0 auto 10px"><b>Lista de preguntas opción múltiple</b></div>
+	            <ul class="list-group">
+	                <opcionm v-for="opcionm in listOptionmultiple" :opcionm="opcionm"></opcionm>
+	            </ul>
+	        </div>
+
+	        <div class="containerQuestion" v-if="result > 0">
+	        	<div style="display: flex; margin: 0 auto 10px"><b>Lista de preguntas opción verdadero/falso</b></div>
+	            <ul class="list-group">
+	                <opciontf v-for="opciontf in listTrueFalse" :opciontf="opciontf"></opciontf>
+	            </ul>
+	        </div>
+
+			<div class="containerQuestion" v-if="result > 0">
+	        	<div style="display: flex; margin: 0 auto 10px"><b>Lista de preguntas respuesta corta</b></div>
+	            <ul class="list-group">
+	                <opcionsa v-for="opcionsa in listShortAnswer" :opcionsa="opcionsa"></opcionsa>
+	            </ul>
+	        </div>
+		</div>
+		<!--
+		<pre>
+	        {{ $data }}
+	    </pre>
+		-->
+	</div>
+
+	<template id="template-listOptionmultiple">
+        <li class="list-group-item">
+            <b>Pregunta: </b> {{ opcionm.textQuestion }}
+            <div v-for="options in opcionm.options">
+            	<b>opcion: </b> {{ options.textOption }} - <b>respuesta: </b>{{ options.answer }}
+            </div>
+            <button @click="deleteQuestionOptionM(opcionm)" class="btnClearQuestionTF">Eliminar</button>
+        </li>
+    </template>
+
+    <template id="template-listTrueFalse">
+        <li class="list-group-item">
+            <b>Pregunta: </b> {{ opciontf.textQuestion }} - <b>Respuesta: </b> {{ opciontf.answer }}
+            <button @click="deleteQuestionOptionTF(opciontf)" class="btnClearQuestion">Eliminar</button>
+        </li>
+    </template>
+
+    <template id="template-listShortAnswer">
+        <li class="list-group-item">
+            <b>Pregunta: </b> {{ opcionsa.textQuestion }} - <b>Respuesta: </b> {{ opcionsa.answer }}
+            <button @click="deleteQuestionOptionSA(opcionsa)" class="btnClearQuestion">Eliminar</button>
+        </li>
+    </template>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <script src="js/view.js"></script>
+</body>
+</html>

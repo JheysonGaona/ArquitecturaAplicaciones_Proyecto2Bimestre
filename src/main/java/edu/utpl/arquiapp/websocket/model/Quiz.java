@@ -14,36 +14,33 @@ public class Quiz implements Serializable {
     private Long idQuiz;
     @Column(name = "nameQuiz")
     private String nameQuiz;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionOptionMultiple> optionMultiple;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionTrueFalse> optionTrueFalse;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "quiz_idQuiz")
     private List<QuestionShortAnswer> optionShortAnswer;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Teacher teacher;
 
     public Quiz(){
     }
 
     public Quiz(String nameQuiz, List<QuestionOptionMultiple> optionMultiple, List<QuestionTrueFalse> optionTrueFalse,
-                List<QuestionShortAnswer> optionShortAnswer, Teacher teacher) {
+                List<QuestionShortAnswer> optionShortAnswer) {
         this.nameQuiz = nameQuiz;
         this.optionMultiple = optionMultiple;
         this.optionTrueFalse = optionTrueFalse;
         this.optionShortAnswer = optionShortAnswer;
-        this.teacher = teacher;
-    }
-
-    public Quiz(String nameQuiz) {
-        this.nameQuiz = nameQuiz;
     }
 
     public Long getIdQuiz() {
         return idQuiz;
+    }
+
+    public void setIdQuiz(Long idQuiz) {
+        this.idQuiz = idQuiz;
     }
 
     public String getNameQuiz() {
@@ -76,13 +73,5 @@ public class Quiz implements Serializable {
 
     public void setOptionShortAnswer(List<QuestionShortAnswer> optionShortAnswer) {
         this.optionShortAnswer = optionShortAnswer;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
     }
 }

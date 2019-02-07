@@ -5,88 +5,150 @@
     <title>My socrative</title>
     <link rel="stylesheet" type="text/css" href="css/estilosTeacher.css">
     <link href="https://fonts.googleapis.com/css?family=Courgette|Shrikhand" rel="stylesheet">
+
 </head>
 <body>
-	<header>
-		<h2>My Socrative</h2>
-		<nav>
-			<a href="">Crear cuestionario</a>
-			<a href="">Lanzar cuestionario</a>
-			<a href="">Descargar resultados</a>
-		</nav>
-	</header>
-	<!-- Cuerpo para la aplicacion del vuejs -->
 	<div id="app">
-		<!-- Etiquetas del nombre del cuestionario y el boton para guardar los datos del mismo -->
-		<div id="containerFormPrincipal">
-			<input type="text" id="txtNameQUiz" name="txtNameQUiz" placeholder="Nombre del cuestionario" maxlength="45" v-model="nameQuiz">
-			<button id="btnSaveAndQuit" v-on:click="addQuiz">Guardar y Salir</button>
-		</div>
-		<!-- Etiquetas para desplazamiento de botones de agregar tipo de preguntas-->
-		<div id="containerTypeQuestion">
-			<label id="lblTypeQuestion">Agregar tipo de pregunta</label>
-			<div id="containerBtnTypeQuestion">
-				<button id="btnOptionMultiple" v-on:click="setOption(1)">+ Opción Múltiple</button>
-				<button id="btnTrueFalse" v-on:click="setOption(2)">+ Verdadero/Falso</button>
-				<button id="btnShortAnswer" v-on:click="setOption(3)">+ Respuesta Corta</button>
+		<!--
+		<div v-if="!status">
+			<div id="formLogin">
+				<label>Usuario</label>
+				<br>
+				<input v-model="user" class="user" type="text" name="txtNameUser">
+				<br>
+				<label>Contraseña</label>
+				<br>
+				<input v-model="password" class="user"  type="password" name="txtPassworduser">
+				<br>
+				<button @click="login" class="user1" >Iniciar sesión</button>
 			</div>
 		</div>
-		<!-- Etiquetas de formularios para agregar nuevas preguntas al cuestionario -->
-		<!-- Etiquetas formulario de opcion multiple -->
-		<div class="containerQuestion" v-if="option === 1">
-			<div class="lblMsmTypeQuestion">Agregando pregunta de opción múltiple</div>
-			<input type="text" class="txtNameQuestion" name="txtNameQuestion" placeholder="Ingrese su pregunta" maxlength="100" v-model="textQuestion">
-			<br>
-			<label class="lblOption" :class="{colorGreen: answer1}">A</label>
-			<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 1" maxlength="100" v-model="option1" :class="{colorGreen: answer1}">
-			<button class="btnCheckAnswer" v-on:click="answer1 = !answer1" :class="{btnCheckAnswerFalse: answer1}"></button>
-			<br>
-			<label class="lblOption" :class="{colorGreen: answer2}">B</label>
-			<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 2" maxlength="100" v-model="option2" :class="{colorGreen: answer2}">
-			<button class="btnCheckAnswer" v-on:click="answer2 = !answer2" :class="{btnCheckAnswerFalse: answer2}"></button>
-			<br>
-			<label class="lblOption" :class="{colorGreen: answer3}">C</label>
-			<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 3" maxlength="100" v-model="option3" :class="{colorGreen: answer3}">
-			<button class="btnCheckAnswer" v-on:click="answer3 = !answer3" :class="{btnCheckAnswerFalse: answer3}"></button>
-			<br>
-			<label class="lblOption" :class="{colorGreen: answer4}">D</label>
-			<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 4" maxlength="100" v-model="option4" :class="{colorGreen: answer4}">
-			<button class="btnCheckAnswer" v-on:click="answer4 = !answer4" :class="{btnCheckAnswerFalse: answer4}"></button>
-			<br>
-			<button class="btnSaveQuestion" v-on:click="addQuestionOptionMultiple">Guardar pregunta</button>
-		</div>
-
-		<template id="template-questions">
-			<li class="list-group-item">
-				
-			</li>
-		</template>
-
-
-		<!-- Etiquetas formulario de verdadero/falso -->
-		<div class="containerQuestion" v-if="option === 2">
-			<div class="lblMsmTypeQuestion">Agregando pregunta verdadero/falso</div>
-			<input type="text" class="txtNameQuestion" name="txtNameQuestion" placeholder="Ingrese su pregunta" maxlength="100" v-model="textQuestion">
-			<div id="containerBtnTrueFalse">
-				<div id="lblMsmsOptionCorrect">Seleccione la opción correcta</div>
-				<button class="btnOptionTrueFalse" v-on:click="setTrueFalse(true)" :class="{green: answerTrueFalse}">Verdadero</button>
-				<button class="btnOptionTrueFalse" v-on:click="setTrueFalse(false)" :class="{red: !answerTrueFalse}">Falso</button>
-			</div>
-			<button class="btnSaveQuestion" v-on:click="addQuestionTrueFalse">Guardar pregunta</button>
-		</div>
-		<!-- Etiquetas formulario de respuesta corta -->
-		<div class="containerQuestion" v-if="option === 3">
-			<div class="lblMsmTypeQuestion">Agregando pregunta respuesta corta</div>
-			<input type="text" class="txtNameQuestion" name="txtNameQuestion" placeholder="Ingrese su pregunta" maxlength="100" v-model="textQuestion">
-			<input type="text" class="txtOptionQuestionShortAns" name="txtOptionQuestionShortAns" placeholder="Ingrese su respuesta" maxlength="100" v-model="answerShortAnswer">
-			<button class="btnSaveQuestion" v-on:click="addQuestionShortAnswer">Guardar pregunta</button>
-		</div>
+		 v-if="status === 'teacherLogin'"--->
+		<div >
+			<header>
+				<h2>My Socrative</h2>
+				<nav>
+					<a href="teacher.html">Crear cuestionario</a>
+					<a href="viewQuiz.html">Ver cuestionarios</a>
+					<a href="downloadResult.html">Descargar resultados</a>
+				</nav>
+			</header>
+			<!-- Cuerpo para la aplicacion del vuejs -->
 		
-		<pre>
-            {{ $data }}
-        </pre>
+			<!-- Etiquetas del nombre del cuestionario y el boton para guardar los datos del mismo -->
+			<div id="containerFormPrincipal">
+				<input type="text" id="txtNameQUiz" name="txtNameQUiz" placeholder="Nombre del cuestionario" maxlength="45" v-model="nameQuiz">
+				<button id="btnSaveAndQuit" v-on:click="addQuiz">Guardar y Salir</button>
+			</div>
+			<!-- Etiquetas para desplazamiento de botones de agregar tipo de preguntas-->
+			<div id="containerTypeQuestion">
+				<label id="lblTypeQuestion">Agregar tipo de pregunta</label>
+				<div id="containerBtnTypeQuestion">
+					<button id="btnOptionMultiple" v-on:click="setOption(1)">+ Opción Múltiple</button>
+					<button id="btnTrueFalse" v-on:click="setOption(2)">+ Verdadero/Falso</button>
+					<button id="btnShortAnswer" v-on:click="setOption(3)">+ Respuesta Corta</button>
+				</div>
+			</div>
+			<!-- Etiquetas de formularios para agregar nuevas preguntas al cuestionario -->
+			<!-- Etiquetas formulario de opcion multiple -->
+			<div class="containerQuestion" v-if="option === 1">
+				<div class="lblMsmTypeQuestion">Agregando pregunta de opción múltiple</div>
+				<input type="text" class="txtNameQuestion" name="txtNameQuestion" placeholder="Ingrese su pregunta" maxlength="100" v-model="textQuestion">
+				<br>
+				<label class="lblOption" :class="{colorGreen: answer1}">A</label>
+				<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 1" maxlength="100" v-model="option1" :class="{colorGreen: answer1}">
+				<button class="btnCheckAnswer" v-on:click="answer1 = !answer1" :class="{btnCheckAnswerFalse: answer1}"></button>
+				<br>
+				<label class="lblOption" :class="{colorGreen: answer2}">B</label>
+				<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 2" maxlength="100" v-model="option2" :class="{colorGreen: answer2}">
+				<button class="btnCheckAnswer" v-on:click="answer2 = !answer2" :class="{btnCheckAnswerFalse: answer2}"></button>
+				<br>
+				<label class="lblOption" :class="{colorGreen: answer3}">C</label>
+				<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 3" maxlength="100" v-model="option3" :class="{colorGreen: answer3}">
+				<button class="btnCheckAnswer" v-on:click="answer3 = !answer3" :class="{btnCheckAnswerFalse: answer3}"></button>
+				<br>
+				<label class="lblOption" :class="{colorGreen: answer4}">D</label>
+				<input type="text" class="txtOptionQuestion" name="txtOptionQuestion" placeholder="Opción 4" maxlength="100" v-model="option4" :class="{colorGreen: answer4}">
+				<button class="btnCheckAnswer" v-on:click="answer4 = !answer4" :class="{btnCheckAnswerFalse: answer4}"></button>
+				<br>
+				<button class="btnSaveQuestion" v-on:click="addQuestionOptionMultiple">Guardar pregunta</button>
+			</div>
+
+	        <div class="containerQuestion" v-if="option === 1 && listOptionmultiple.length > 0">
+	        	<div style="display: flex; margin: 0 auto 10px"><b>Lista de preguntas opción múltiple</b></div>
+	            <ul class="list-group">
+	                <opcionm v-for="opcionm in listOptionmultiple" :opcionm="opcionm"></opcionm>
+	            </ul>
+	        </div>
+
+			<!-- Etiquetas formulario de verdadero/falso -->
+			<div class="containerQuestion" v-if="option === 2">
+				<div class="lblMsmTypeQuestion">Agregando pregunta verdadero/falso</div>
+				<input type="text" class="txtNameQuestion" name="txtNameQuestion" placeholder="Ingrese su pregunta" maxlength="100" v-model="textQuestion">
+				<div id="containerBtnTrueFalse">
+					<div id="lblMsmsOptionCorrect">Seleccione la opción correcta</div>
+					<button class="btnOptionTrueFalse" v-on:click="setTrueFalse(true)" :class="{green: answerTrueFalse}">Verdadero</button>
+					<button class="btnOptionTrueFalse" v-on:click="setTrueFalse(false)" :class="{red: !answerTrueFalse}">Falso</button>
+				</div>
+				<button class="btnSaveQuestion" v-on:click="addQuestionTrueFalse">Guardar pregunta</button>
+			</div>
+
+			<div class="containerQuestion" v-if="option === 2 && listTrueFalse.length > 0">
+	        	<div style="display: flex; margin: 0 auto 10px"><b>Lista de preguntas opción verdadero/falso</b></div>
+	            <ul class="list-group">
+	                <opciontf v-for="opciontf in listTrueFalse" :opciontf="opciontf"></opciontf>
+	            </ul>
+	        </div>
+
+			<!-- Etiquetas formulario de respuesta corta -->
+			<div class="containerQuestion" v-if="option === 3">
+				<div class="lblMsmTypeQuestion">Agregando pregunta respuesta corta</div>
+				<input type="text" class="txtNameQuestion" name="txtNameQuestion" placeholder="Ingrese su pregunta" maxlength="100" v-model="textQuestion">
+				<input type="text" class="txtOptionQuestionShortAns" name="txtOptionQuestionShortAns" placeholder="Ingrese su respuesta" maxlength="100" v-model="answerShortAnswer">
+				<button class="btnSaveQuestion" v-on:click="addQuestionShortAnswer">Guardar pregunta</button>
+			</div>
+
+			<div class="containerQuestion" v-if="option === 3 && listShortAnswer.length > 0">
+	        	<div style="display: flex; margin: 0 auto 10px"><b>Lista de preguntas respuesta corta</b></div>
+	            <ul class="list-group">
+	                <opcionsa v-for="opcionsa in listShortAnswer" :opcionsa="opcionsa"></opcionsa>
+	            </ul>
+	        </div>
+			
+			<!---
+			<pre>
+	            {{ $data }}
+	        </pre>
+	        --->
+		</div>
 	</div>
+
+	<template id="template-listOptionmultiple">
+        <li class="list-group-item">
+            <b>Pregunta: </b> {{ opcionm.textQuestion }}
+            <div v-for="options in opcionm.options">
+            	<b>opcion: </b> {{ options.textOption }} - <b>respuesta: </b>{{ options.answer }}
+            </div>
+            <button @click="deleteQuestionOptionM(opcionm)" class="btnClearQuestionTF">Eliminar</button>
+        </li>
+    </template>
+
+    <template id="template-listTrueFalse">
+        <li class="list-group-item">
+            <b>Pregunta: </b> {{ opciontf.textQuestion }} - <b>Respuesta: </b> {{ opciontf.answer }}
+            <button @click="deleteQuestionOptionTF(opciontf)" class="btnClearQuestion">Eliminar</button>
+        </li>
+    </template>
+
+    <template id="template-listShortAnswer">
+        <li class="list-group-item">
+            <b>Pregunta: </b> {{ opcionsa.textQuestion }} - <b>Respuesta: </b> {{ opcionsa.answer }}
+            <button @click="deleteQuestionOptionSA(opcionsa)" class="btnClearQuestion">Eliminar</button>
+        </li>
+    </template>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
     <script src="js/teacher.js"></script>
 </body>
 </html>

@@ -3,36 +3,33 @@ new Vue({
     el: "#app",
     // variables globales
     data: {
-        // datos del profesor
-        name: '',
-        lastname: '',
-        email: '',
-        password: '',
-        // Errores
-        errors: []
+        quizId: 1,
+        listQuiz: [],
+        result: 0
     },
-    // metodos de la app
+    mounted: function() {
+            this.connect()
+    },
     methods: {
-        addTeacher: function (){
-            if(this.name && this.lastname && this.email && this.password){
-                alert("hola1");
-                this.connect();
-            }else{
-                this.errors.push('All fields required.');
+        hola(){
+            var radios = document.getElementsByName('quiz');
+            for (var j = 0; j < radios.length; j++) {
+                if (radios[j].checked) {
+                    this.result = radios[j].value;
+                }  
             }
+            alert(this.result);
         },
         // conectando con el servidor mediante un URL y puerto conexion WebSocket
         connect() {
-            socket = new WebSocket("ws://localhost:4567/CreateTeacher");
+            socket = new WebSocket("ws://localhost:4567/CreateQuiz");
             socket.onopen = this.openWs;
             socket.onerror = this.errorWs;
             socket.onmessage = this.messageWs;
         },
         // enviar cuestionario al servidor en formato JSON
         openWs() {
-            var gson = {name: this.name, lastName: this.lastname, email: this.email, password: this.password};
-            var myJSON = JSON.stringify(gson);
-            this.sendMessage(myJSON);
+            this.sendMessage(this.quizId);
         },
         // Error de conexion
         errorWs(evt) {
@@ -40,7 +37,8 @@ new Vue({
         },
         // message recivido desde el servidor
         messageWs(evt) {
-            this.msm = evt.data;
+            this.listQuiz = JSON.parse(evt.data);
+            
         },
         sendMessage(msgData) {
             socket.send(msgData);

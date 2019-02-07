@@ -7,6 +7,34 @@ body{
 	background-color: white;
 }
 
+
+#formLogin{
+	border: 2px solid #404040;
+	border-radius: 10px;
+	padding: 30px;
+	width: 310px;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color:rgba(61, 255, 53, 0.7);
+	box-shadow: 0px 0px 20px 10px rgba(73,166,68,0.8);
+}
+
+.user{
+	height: 35px;
+	width: 99%;
+	margin: 5px auto;
+	text-align: center;
+}
+
+.user1{
+	height: 45px;
+	width: 100%;
+	margin: 10px auto 0;
+}
+
 h2{
 	text-align: center;
 	height: 60px;
@@ -243,4 +271,32 @@ button{
 	height: 200px;
 	border: 2px solid black;
 	background-color: red;
+}
+
+.btnClearQuestion{
+	background-color: red;
+	width: 200px;
+	height: 45px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	font-weight: bold;
+	margin: 5px auto;
+}
+
+.btnClearQuestionTF{
+	background-color: red;
+	width: 200px;
+	height: 45px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+
+.list-group-item{
+	padding: 20px 20px 10px;
+	display: block;
+	margin-bottom: 10px;
+	border: 2px solid #000000;
+	border-radius: 5px;
 }

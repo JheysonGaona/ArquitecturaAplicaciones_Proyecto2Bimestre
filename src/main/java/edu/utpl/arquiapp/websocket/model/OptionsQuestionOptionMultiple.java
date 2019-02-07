@@ -49,5 +49,4 @@ public class OptionsQuestionOptionMultiple implements Serializable {
     public void setAnswer(boolean answer) {
         this.answer = answer;
     }
-
 }

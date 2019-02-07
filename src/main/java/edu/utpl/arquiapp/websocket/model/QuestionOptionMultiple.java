@@ -14,7 +14,7 @@ public class QuestionOptionMultiple implements Serializable {
     private Long idQuestionOptionMultiple;
     @Column(name = "textQuestion")
     private String textQuestion;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "QuestionOptionMultiple_idQuestionOptionMultiple")
     private List<OptionsQuestionOptionMultiple> options;
 
@@ -23,8 +23,9 @@ public class QuestionOptionMultiple implements Serializable {
 
     }
 
-    public QuestionOptionMultiple(String textQuestion) {
+    public QuestionOptionMultiple(String textQuestion, List<OptionsQuestionOptionMultiple> options) {
         this.textQuestion = textQuestion;
+        this.options = options;
     }
 
     public Long getIdQuestionOptionMultiple() {

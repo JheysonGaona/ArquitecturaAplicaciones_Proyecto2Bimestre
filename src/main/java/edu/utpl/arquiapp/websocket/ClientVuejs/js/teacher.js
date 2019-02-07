@@ -1,9 +1,48 @@
-new Vue({
+Vue.http.headers.common['Accept'] = 'application/json';
+
+Vue.component('opcionm', {
+    template: "#template-listOptionmultiple",
+    props: ['opcionm'],
+    methods: {
+        deleteQuestionOptionM: function (opcionm) {
+            var index = vm.listOptionmultiple.indexOf(opcionm);
+            vm.listOptionmultiple.splice(index, 1);
+        }
+    }
+});
+
+Vue.component('opciontf', {
+    template: "#template-listTrueFalse",
+    props: ['opciontf'],
+    methods: {
+        deleteQuestionOptionTF: function (opciontf) {
+            var index = vm.listTrueFalse.indexOf(opciontf);
+            vm.listTrueFalse.splice(index, 1);
+        }
+    }
+});
+
+Vue.component('opcionsa', {
+    template: "#template-listShortAnswer",
+    props: ['opcionsa'],
+    methods: {
+        deleteQuestionOptionSA: function (opcionsa) {
+            var index = vm.listShortAnswer.indexOf(opcionsa);
+            vm.listShortAnswer.splice(index, 1);
+        }
+    }
+});
+
+
+var vm = new Vue({
     // Etiqueta main desde donde iniciara vuejs
     el: "#app",
     // variables globales
     data: {
         // evaluar boton seleccionado
+        status: '',
+        user: '',
+        password: '',
         option: 0,
         // nombre del cuestionario
         nameQuiz: '',
@@ -105,7 +144,14 @@ new Vue({
         		break;
         	}
         },
-
+        login(){
+            if(this.user == "jheyson" && this.password == "123"){
+                this.status = "teacherLogin";
+            }else{
+                alert("Nombre de usuario o contraseña incorrectos");
+            }
+            
+        },
         // conectando con el servidor mediante un URL y puerto conexion WebSocket
         connect() {
             socket = new WebSocket("ws://localhost:4567/CreateQuiz");

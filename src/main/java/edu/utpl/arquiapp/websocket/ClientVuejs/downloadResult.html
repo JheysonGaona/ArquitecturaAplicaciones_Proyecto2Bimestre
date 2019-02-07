@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>My socrative</title>
+    <link rel="stylesheet" type="text/css" href="css/estilosTeacher.css">
+
+</head>
+<body>
+	<header>
+		<h2>My Socrative</h2>
+		<nav>
+			<a href="teacher.html">Crear cuestionario</a>
+			<a href="viewQuiz.html">Ver cuestionarios</a>
+			<a href="downloadResult.html">Descargar resultados</a>
+		</nav>
+	</header>
+	<!-- Cuerpo para la aplicacion del vuejs -->
+	<div id="app">
+		<div>
+			<h4 style="font-size: 1.2em; margin-left: 5px;">Lista de resultados</h4>
+			<div style="margin: 5px;" v-for="actual in listQuiz" id="">
+				<input type="radio" name="quiz" value="1">
+				<label>Matemáticas</label>
+				<br>
+				<input type="radio" name="quiz" value="2">
+				<label>ciencias </label>
+                <fieldset>
+                    <q-option2 v-bind:opcion="actual"></q-option2>
+                </fieldset>
+				<label style="font-size: 1em; margin-left: 5px;"><b>Seleccione un cuestionario</b></label>
+            	<br>
+                <button style="width: 300px; height: 45px; border: 2px solid black; margin: 5px; font-weight: bold; background-color: yellow;" @click="hola">Cargar contenido</button>
+            </div>
+            
+
+            <div>
+            	{{ quiz }}
+            </div>
+		</div>
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/view.js"></script>
+</body>
+</html>

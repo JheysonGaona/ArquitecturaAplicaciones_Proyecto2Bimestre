@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b441a0b-69f5-4ca5-9fe9-894e901f5a9a" name="Default Changelist" comment="" />
+    <list default="true" id="2b441a0b-69f5-4ca5-9fe9-894e901f5a9a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROYECTO_SOCRATIVE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PROYECTO_SOCRATIVE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/css/estilosStudent.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/css/estilosStudent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/css/estilosTeacher.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/css/estilosTeacher.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/js/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/js/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/js/student.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/js/teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/js/teacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/registerTeacher.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/ClientVuejs/teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Answer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/OptionsQuestionOptionMultiple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/OptionsQuestionOptionMultiple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionOptionMultiple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionOptionMultiple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionShortAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionShortAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionTrueFalse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionTrueFalse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/MainWSocketTeacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/MainWSocketTeacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/handlers/TeacherWebSocketHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/handlers/TeacherWebSocketHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/model/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/model/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/util/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/utpl/arquiapp/websocket/util/HibernateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestData.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +38,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,7 +68,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/OptionsQuestionOptionMultiple.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionShortAnswer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionTrueFalse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Estudent.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/Estudiante.java" />
@@ -40,9 +77,12 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/OpcionMultiple.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/VerdaderoFalso.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/RespuestaCorta.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Quiz.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionOptionMultiple.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Results.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Answers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java" />
       </list>
     </option>
   </component>
@@ -57,11 +97,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="546" />
     <option name="y" value="28" />
-    <option name="width" value="683" />
-    <option name="height" value="740" />
+    <option name="width" value="810" />
+    <option name="height" value="738" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -112,15 +152,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="websocket" type="462c0819:PsiDirectoryNode" />
-              <item name="handlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ArquitecturaAplicaciones_Proyecto2Bimestre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ArquitecturaAplicaciones_Proyecto2Bimestre" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="websocket" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -140,7 +171,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548615452875" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549572410645" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -159,7 +190,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainWSocketTeacher">
+    <configuration name="MainWSocketStudent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.utpl.arquiapp.websocket.MainWSocketStudent" />
+      <module name="PROYECTO_SOCRATIVE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.utpl.arquiapp.websocket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainWSocketTeacher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.utpl.arquiapp.websocket.MainWSocketTeacher" />
       <module name="PROYECTO_SOCRATIVE" />
@@ -176,6 +220,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainWSocketTeacher" />
+        <item itemvalue="Application.MainWSocketStudent" />
       </list>
     </recent_temporary>
   </component>
@@ -200,16 +245,28 @@
       <workItem from="1548610189159" duration="5363000" />
       <workItem from="1548791709661" duration="73000" />
       <workItem from="1549311981948" duration="88000" />
+      <workItem from="1549553629457" duration="5515000" />
+      <workItem from="1549559839516" duration="6855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18109000" />
+    <option name="totallyTimeSpent" value="30479000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1366" height="740" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6883117" visible="true" weight="0.3007576" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6883117" visible="true" weight="0.13787879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" sideWeight="0.3116883" side_tool="true" weight="0.40816328" />
       <window_info id="Designer" order="3" />
@@ -219,11 +276,11 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3262987" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3198052" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.32954547" />
@@ -276,27 +333,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/RespuestaCorta.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/OpcionMultiple.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model2/Cuestionario.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/handlers/TeacherWebSocketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionTrueFalse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -306,13 +342,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Teacher.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Estudent.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Quiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/QuestionShortAnswer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -324,6 +353,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Quiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/util/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="80" selection-start-line="6" selection-start-column="80" selection-end-line="6" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/handlers/StudentWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Answers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/handlers/TeacherWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketStudent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/model/Results.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/utpl/arquiapp/websocket/MainWSocketTeacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
         </state>
       </provider>
     </entry>
